@@ -1,3 +1,11 @@
+<!--
+ * @Author: zhangjie
+ * @Date: 2021-12-07 15:21:59
+ * @LastEditors: zhangjie
+ * @LastEditTime: 2021-12-29 21:02:13
+ * @FilePath: \vue3-demo\src\components\HomeChild.vue
+-->
+
 <template>
     <div>
         <p>home child --- {{propsName}}</p>
@@ -6,10 +14,15 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, toRefs } from 'vue'
-
+import { defineComponent, toRefs, PropType } from 'vue'
+import { TemplateProps } from '../store/types'
 export default defineComponent({
-  props: ['propsName'],
+  props: {
+    propsName: Number,
+    list: {
+      type: Array as PropType<TemplateProps[]>
+    }
+  },
   emits: ['minus-event'], // 注冊組件的emits方法，表示组件上定义的已发出的事件的名称
   // setup选项中没有this（在执行setup时，尚未创建组件的实例），无法访问组件声明中的属性
   setup (props, ctx) {

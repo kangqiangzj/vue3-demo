@@ -1,18 +1,29 @@
+<!--
+ * @Author: zhangjie
+ * @Date: 2021-12-07 11:33:49
+ * @LastEditors: zhangjie
+ * @LastEditTime: 2021-12-29 20:47:35
+ * @FilePath: \vue3-demo\src\App.vue
+-->
 <template>
   <router-link to="/">Home</router-link>
-  <hr>
+  <hr />
   <router-link to="/ref">RefView</router-link>
-  <hr>
+  <hr />
   <router-link to="/suspense">suspense</router-link>
-  <hr>
-  <teleport to="#end-of-body" :disabled="toggle">
-    teleport area
-  </teleport>
-  <button type="button" @click="toggleHandle">[teleport] toggle value: {{toggle}}</button>
+  <hr />
+  <teleport to="#end-of-body" :disabled="toggle">teleport area</teleport>
+  <button type="button" @click="toggleHandle">
+    [teleport] toggle value: {{ toggle }}
+  </button>
   <div>this is app area</div>
-  <hr>
-  <div>{{count}} <button type="button" @click="increEvent">+1</button><button type="button" @click="decreEvent">-1</button></div>
-  <router-view/>
+  <hr />
+  <div>
+    {{ count }}
+    <button type="button" @click="increEvent">+1</button>
+    <button type="button" @click="decreEvent">-1</button>
+  </div>
+  <router-view />
 </template>
 <script lang="ts">
 import { computed, reactive, ref } from 'vue'
@@ -45,5 +56,4 @@ export default {
   }
 }
 </script>
-<style lang="scss">
-</style>
+<style lang="scss"></style>
