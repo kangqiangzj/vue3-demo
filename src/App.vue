@@ -2,7 +2,7 @@
  * @Author: zhangjie
  * @Date: 2021-12-07 11:33:49
  * @LastEditors: zhangjie
- * @LastEditTime: 2021-12-29 20:47:35
+ * @LastEditTime: 2022-01-07 16:08:43
  * @FilePath: \vue3-demo\src\App.vue
 -->
 <template>
@@ -49,7 +49,7 @@ export default {
     return reactive({
       toggle,
       toggleHandle,
-      count: computed(() => store.state.storeCount),
+      count: computed(() => store.state.common.storeCount),
       increEvent,
       decreEvent
     })
