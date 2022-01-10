@@ -2,16 +2,15 @@
  * @Author: zhangjie
  * @Date: 2021-12-07 11:33:49
  * @LastEditors: zhangjie
- * @LastEditTime: 2022-01-07 16:08:43
+ * @LastEditTime: 2022-01-10 09:21:29
  * @FilePath: \vue3-demo\src\App.vue
 -->
 <template>
-  <router-link to="/">Home</router-link>
-  <hr />
-  <router-link to="/ref">RefView</router-link>
-  <hr />
-  <router-link to="/suspense">suspense</router-link>
-  <hr />
+  <router-link to="/">Home</router-link>&nbsp;&nbsp; | &nbsp;&nbsp;
+  <router-link to="/ref">RefView</router-link>&nbsp;&nbsp; | &nbsp;&nbsp;
+  <router-link to="/suspense">suspense</router-link>&nbsp;&nbsp; | &nbsp;&nbsp;
+  <router-link to="/editor">editor</router-link>&nbsp;&nbsp; | &nbsp;&nbsp;
+  <hr>
   <teleport to="#end-of-body" :disabled="toggle">teleport area</teleport>
   <button type="button" @click="toggleHandle">
     [teleport] toggle value: {{ toggle }}
@@ -23,7 +22,9 @@
     <button type="button" @click="increEvent">+1</button>
     <button type="button" @click="decreEvent">-1</button>
   </div>
-  <router-view />
+  <div class="content">
+    <router-view />
+  </div>
 </template>
 <script lang="ts">
 import { computed, reactive, ref } from 'vue'
@@ -56,4 +57,8 @@ export default {
   }
 }
 </script>
-<style lang="scss"></style>
+<style lang="scss">
+.content{
+  padding: 50px;
+}
+</style>

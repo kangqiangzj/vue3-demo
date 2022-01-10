@@ -2,7 +2,7 @@
  * @Author: zhangjie
  * @Date: 2021-12-07 11:33:49
  * @LastEditors: zhangjie
- * @LastEditTime: 2022-01-07 16:09:13
+ * @LastEditTime: 2022-01-07 16:59:41
  * @FilePath: \vue3-demo\src\store\index.ts
  */
 import { createStore, createLogger } from 'vuex'
@@ -11,11 +11,12 @@ import { createStore, createLogger } from 'vuex'
 import user, { UserProps } from './modules/user'
 import templates, { TemplatesProps } from './modules/templates'
 import common, { CommonProps } from './modules/common'
-
+import editor, { EditorProps } from './modules/editors'
 export interface GlobalDataProps {
   user: UserProps;
   tempaltes: TemplatesProps;
-  common:CommonProps
+  common:CommonProps;
+  editor:EditorProps
 }
 
 const debug = process.env.NODE_ENV !== 'production'
@@ -26,7 +27,8 @@ export default createStore({
   modules: {
     user,
     templates,
-    common
+    common,
+    editor
   },
   plugins: debug ? [createLogger()] : []
 })

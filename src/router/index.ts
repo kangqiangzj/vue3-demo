@@ -1,7 +1,16 @@
+/*
+ * @Description: 文件描述
+ * @Author: zhangjie
+ * @Date: 2021-12-07 11:33:49
+ * @LastEditors: zhangjie
+ * @LastEditTime: 2022-01-07 17:04:21
+ * @FilePath: \vue3-demo\src\router\index.ts
+ */
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import Home from '../views/Home.vue'
 import RefView from '../views/RefView.vue'
 import SuspenseView from '../views/SuspenseView.vue'
+import Editor from '../views/Editor.vue'
 import NotFound from '@/components/NotFound.vue'
 const routes: Array<RouteRecordRaw> = [
   {
@@ -18,6 +27,11 @@ const routes: Array<RouteRecordRaw> = [
     path: '/suspense',
     name: 'Suspense',
     component: SuspenseView
+  },
+  {
+    path: '/editor',
+    name: 'Editor',
+    component: Editor
   },
   {
     path: '/about',
