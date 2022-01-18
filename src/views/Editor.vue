@@ -3,7 +3,7 @@
  * @Author: zhangjie
  * @Date: 2022-01-07 17:01:14
  * @LastEditors: zhangjie
- * @LastEditTime: 2022-01-10 18:05:55
+ * @LastEditTime: 2022-01-18 16:33:53
  * @FilePath: \vue3-demo\src\views\Editor.vue
 -->
 <template>
@@ -29,10 +29,11 @@
       </div>
     </div>
     <div class="right">
-      组件属性：
+      <p class="right-tit">组件属性：</p>
       <props-table
         v-if="currentElement && currentElement.props"
         :props="currentElement.props"
+        @change="handleChange"
       ></props-table>
       <pre>{{ currentElement && currentElement.props }}</pre>
     </div>
@@ -48,7 +49,8 @@ import { defaultTextTemplates } from '../mock/defaultTextTemplates'
 import LText from '@/components/base/LText.vue'
 import ComponentList from '../components/ComponentList.vue'
 import EditWrapper from '../components/EditWrapper.vue'
-import PropsTable from '../components/PropsTable.vue'
+// import PropsTable from '../components/PropsTable.vue'
+import PropsTable from '../components/tsx/PropsTable'
 export default defineComponent({
   components: {
     LText,
@@ -68,12 +70,17 @@ export default defineComponent({
     const setActive = (id: string) => {
       store.commit('setActive', id)
     }
+    const handleChange = (e:any) => {
+      console.log('e', e)
+      store.commit('updateComponent', e)
+    }
     return {
       elements,
       defaultTextTemplates,
       addItem,
       setActive,
-      currentElement
+      currentElement,
+      handleChange
     }
   }
 })
@@ -89,10 +96,16 @@ export default defineComponent({
   .center {
     flex: 1;
     padding: 0 10px;
+    background: #ccc;
   }
   .right {
     width: 400px;
     border-left: 1px solid red;
+    padding: 0 12px;
+    .right-tit{
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
   }
 }
 </style>

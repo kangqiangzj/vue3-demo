@@ -3,7 +3,7 @@
  * @Author: zhangjie
  * @Date: 2022-01-10 11:20:16
  * @LastEditors: zhangjie
- * @LastEditTime: 2022-01-10 14:35:12
+ * @LastEditTime: 2022-01-17 16:26:38
  * @FilePath: \vue3-demo\src\components\ComponentList.vue
 -->
 <template>
@@ -24,7 +24,7 @@ export default defineComponent({
       required: true
     }
   },
-  emit: ['on-item-click'],
+  emits: ['on-item-click'],
   setup (props, context) {
     const handleCompItemClick = (data:any) => {
       context.emit('on-item-click', data)

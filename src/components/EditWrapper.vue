@@ -3,7 +3,7 @@
  * @Author: zhangjie
  * @Date: 2022-01-10 15:41:10
  * @LastEditors: zhangjie
- * @LastEditTime: 2022-01-10 16:11:34
+ * @LastEditTime: 2022-01-11 10:13:58
  * @FilePath: \vue3-demo\src\components\EditWrapper.vue
 -->
 <template>
@@ -46,7 +46,7 @@ export default defineComponent({
   border:1px solid transparent;
   user-select: none;
   &:hover{
-    border: 1px dashed #ccc;
+    border: 1px dashed red;
   }
   &.active{
     border: 1px solid #1890ff;

@@ -1,0 +1,11 @@
+.prop-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+  .label{
+    margin-right: 10px;
+  }
+}
+.prop-component{
+ flex: 1;
+}

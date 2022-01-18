@@ -3,7 +3,7 @@
  * @Author: zhangjie
  * @Date: 2022-01-10 09:29:44
  * @LastEditors: zhangjie
- * @LastEditTime: 2022-01-10 15:11:45
+ * @LastEditTime: 2022-01-11 10:21:11
  * @FilePath: \vue3-demo\src\defaultProps.ts
  */
 
@@ -46,6 +46,7 @@ export interface TextComponentProps extends CommonComponentProps{
    lineHeight:string,
    color: string,
    backgroundColor: string,
+   textAlign: string
 }
 
 export const commonDefaultProps:CommonComponentProps = {
@@ -85,6 +86,7 @@ export const textDefaultProps:TextComponentProps = {
   lineHeight: '1',
   color: '#000000',
   backgroundColor: '',
+  textAlign: '',
   ...commonDefaultProps
 }
 

@@ -3,7 +3,7 @@
  * @Author: zhangjie
  * @Date: 2022-01-07 16:28:48
  * @LastEditors: zhangjie
- * @LastEditTime: 2022-01-10 16:00:30
+ * @LastEditTime: 2022-01-17 16:39:08
  * @FilePath: \vue3-demo\src\store\modules\editors.ts
  */
 
@@ -48,6 +48,12 @@ const editor:Module<EditorProps, GlobalDataProps> = {
     },
     setActive (state, curentId) {
       state.currentElement = curentId
+    },
+    updateComponent (state, { key, value }) {
+      const updateComponent = state.components.find((item) => item.id === state.currentElement)
+      if (updateComponent) {
+        updateComponent.props[key as keyof TextComponentProps] = value
+      }
     }
   },
   // getters是基于state的计算属性
